@@ -1,0 +1,14 @@
+#tacBox {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.box {
+    background-color: red;
+    justify-self: stretch;
+    align-self: stretch;
+    text-align: center;
+    line-height: 100px;
+}
