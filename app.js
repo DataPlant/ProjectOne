@@ -18,38 +18,44 @@ function player(){
                 for(let i=0; i<3; i++){
                     check.push(currentScore[score[i]])
                 }
-                console.log(check)
-                if(currentPlayer === 'X'){
-                    let result = 0;
-                    for(let i=0; i<3; i++){
-                        if(check[i] === compareX[i]){
-                            result++;
-                        }
-                        if(result === 3){
-                            let final = document.querySelector('h3');
-                            final.append('Player X WINSSSS');
-                        }
-                    }
-                }
-                if(currentPlayer === 'O'){
-                    let result = 0;
-                    for(let i=0; i<3; i++){
-                        if(check[i] === compareO[i]){
-                            result++;
-                        }
-                        if(result === 3){
-                            let final = document.querySelector('h3');
-                            final.append('Player O WINSSSS');
-                        }
-                    }
-                }
+                console.log(check) //Sanity Check
+                resultCheck(currentPlayer, check)
             }
-            if(currentPlayer === 'X'){
-                currentPlayer = 'O';
-            }
-            else{
-                currentPlayer = 'X';
-            }
+            switchPlayer(currentPlayer);
         })
+    }
+}
+function switchPlayer(player){
+    if(player === 'X'){
+        currentPlayer = 'O';
+    }
+    else{
+        currentPlayer = 'X';
+    }
+}
+function resultCheck(player, check){
+    if(player === 'X'){
+        let result = 0;
+        for(let i=0; i<3; i++){
+            if(check[i] === compareX[i]){
+                result++;
+            }
+            if(result === 3){
+                let final = document.querySelector('h3');
+                final.append('Player X WINSSSS');
+            }
+        }
+    }
+    if(player === 'O'){
+        let result = 0;
+        for(let i=0; i<3; i++){
+            if(check[i] === compareO[i]){
+                result++;
+            }
+            if(result === 3){
+                let final = document.querySelector('h3');
+                final.append('Player O WINSSSS');
+            }
+        }
     }
 }
